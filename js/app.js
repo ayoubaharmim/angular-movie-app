@@ -1,5 +1,8 @@
 angular.module('movieApp', ['ui.router', 'ngResource', 'movieApp.controllers', 'movieApp.services']);
 
+// So, our application has the following four states: 1. movies, 2. viewMovie, 3. newMovie and 4. editMovie.
+// Each state is composed of a url, templateUrl and controller. Also note that  when our 
+// main module is loaded we make a transition to state movies showing all the movies in our system.
 angular.module('movieApp').config(function($stateProvider) {
   $stateProvider.state('movies', { // state for showing all movies
     url: '/movies',
