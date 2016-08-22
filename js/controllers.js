@@ -48,5 +48,5 @@ function MovieEditController($scope, $state, $stateParams, Movie) {
 var movieApp = angular.module('movieApp.controllers', []);
 movieApp.controller('MovieListController', MovieListController);
 movieApp.controller('MovieViewController', MovieViewController);
-movieApp.controller('MovieCreateController', MovieViewController);
+movieApp.controller('MovieCreateController', MovieCreateController);
 movieApp.controller('MovieEditController', MovieEditController);
