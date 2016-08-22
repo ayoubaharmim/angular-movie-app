@@ -1,0 +1,19 @@
+<!-- This template displays all the movies in the system. -->
+<!-- The Add New Movie button changes the state to newMovie. As a result a new route loads and we can create a new movie entry. -->
+<a ui-sref="newMovie" class="btn-primary btn-lg nodecoration">Add New Movie</a>
+<table class="table movietable">
+  <tr>
+    <td><h3>All Movies</h3></td>
+    <td></td>
+  </tr>
+  <!-- It loops through all the movie objects obtained from the API and displays the details. -->
+  <tr ng-repeat="movie in movies">
+    <td>{{movie.title}}</td>
+    <td>
+      <!-- View triggers a state transition so that the details for the movie are displayed. -->
+      <a class="btn btn-primary" ui-sref="viewMovie({id:movie._id})">View</a>
+      <!-- Delete button deletes the movie permanently. -->
+      <a class="btn btn-danger" ng-click="deleteMovie(movie)">Delete</a>
+    </td>
+  </tr>
+</table>
