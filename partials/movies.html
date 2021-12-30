@@ -1,19 +1,64 @@
-<!-- This template displays all the movies in the system. -->
-<!-- The Add New Movie button changes the state to newMovie. As a result a new route loads and we can create a new movie entry. -->
-<a ui-sref="newMovie" class="btn-primary btn-lg nodecoration">Add New Movie</a>
-<table class="table movietable">
-  <tr>
-    <td><h3>All Movies</h3></td>
-    <td></td>
-  </tr>
-  <!-- It loops through all the movie objects obtained from the API and displays the details. -->
-  <tr ng-repeat="movie in movies">
-    <td>{{movie.title}}</td>
-    <td>
-      <!-- View triggers a state transition so that the details for the movie are displayed. -->
-      <a class="btn btn-primary" ui-sref="viewMovie({id:movie._id})">View</a>
-      <!-- Delete button deletes the movie permanently. -->
-      <a class="btn btn-danger" ng-click="deleteMovie(movie)">Delete</a>
-    </td>
-  </tr>
-</table>
+<h3>Films</h3>
+<br/>
+
+<div class="card mb-3" style="max-width: 540px;" ng-repeat="movie in movies">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img ng-src="movie.image" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.titre}}</h5>
+        <p class="card-text">{{movie.dateSortie}}</p>
+        <p class="card-text"><small class="text-muted">{{movie.popularite}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DUMMY DATA -->
+<!-- 
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://m.media-amazon.com/images/M/MV5BZDJiNTUyZWQtNGFkNy00ODhkLWJkNWMtOTI1ODhhYmNiYzU0XkEyXkFqcGdeQXVyMTMxNTMyNDQw._V1_FMjpg_UX1000_.jpg" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://m.media-amazon.com/images/M/MV5BZDJiNTUyZWQtNGFkNy00ODhkLWJkNWMtOTI1ODhhYmNiYzU0XkEyXkFqcGdeQXVyMTMxNTMyNDQw._V1_FMjpg_UX1000_.jpg" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3 text-center" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://m.media-amazon.com/images/M/MV5BZDJiNTUyZWQtNGFkNy00ODhkLWJkNWMtOTI1ODhhYmNiYzU0XkEyXkFqcGdeQXVyMTMxNTMyNDQw._V1_FMjpg_UX1000_.jpg" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> -->

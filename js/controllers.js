@@ -4,13 +4,13 @@
 function MovieListController($scope, $state, popupService, $window, Movie) {
   $scope.movies = Movie.query(); //fetch all movies. Issues a GET to /api/movies
 
-  $scope.deleteMovie = function(movie) { // Delete a movie. Issues a DELETE to /api/movies/:id
-    if (popupService.showPopup('Really delete this?')) {
-      movie.$delete(function() {
-        $window.location.href = ''; //redirect to home
-      });
-    }
-  };
+  // $scope.deleteMovie = function(movie) { // Delete a movie. Issues a DELETE to /api/movies/:id
+  //   if (popupService.showPopup('Really delete this?')) {
+  //     movie.$delete(function() {
+  //       $window.location.href = ''; //redirect to home
+  //     });
+  //   }
+  // };
 }
 
 function MovieViewController($scope, $stateParams, Movie) {
@@ -45,8 +45,18 @@ function MovieEditController($scope, $state, $stateParams, Movie) {
   $scope.loadMovie(); // Load a movie which can be edited on UI
 }
 
+function SalleListController($scope, $state, popupService, $window, Salle) {
+  $scope.salles = Salle.query();
+}
+
+function SceanceListController($scope, $state, popupService, $window, Sceance) {
+  $scope.scances = Sceance.query();
+}
+
 var movieApp = angular.module('movieApp.controllers', []);
 movieApp.controller('MovieListController', MovieListController);
 movieApp.controller('MovieViewController', MovieViewController);
 movieApp.controller('MovieCreateController', MovieCreateController);
 movieApp.controller('MovieEditController', MovieEditController);
+movieApp.controller('SalleListController', SalleListController);
+movieApp.controller('SceanceListController', SceanceListController);

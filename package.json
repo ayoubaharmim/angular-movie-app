@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "http-server": "^14.0.0"
+  },
+  "scripts": {
+    "start": "http-server -o -c-1 --cors"
+  }
+}

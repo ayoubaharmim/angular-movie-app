@@ -20,6 +20,14 @@ angular.module('movieApp').config(function($stateProvider) {
     url: '/movies/:id/edit',
     templateUrl: 'partials/movie-edit.html',
     controller: 'MovieEditController'
+  }).state('salles', {
+    url: '/movies/salles',
+    templateUrl: 'partials/salles.html',
+    controller: 'SalleListController'
+  }).state('sceances', {
+    url: '/movies/sceances',
+    templateUrl: 'partials/sceances.html',
+    controller: 'SceanceListController'
   });
 }).run(function($state) {
   $state.go('movies'); //make a transition to movies state when app starts
